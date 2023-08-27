@@ -30,3 +30,33 @@ p{
     background-color: #660066;
     color: white;
 }
+.heading1{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.btn-calculate{
+    background-color:#660066;
+    color: white;
+    font-size: 20px;
+    border-radius: 12px;
+    padding: 6px;
+    border: none;
+    width: 180px;
+}
+#txt-remark{
+    font-size: 27px;
+    margin-top: 20px;
+
+}
+
+.btn-reset {
+    background-color: #660066;
+    color: white;
+    font-size: 20px;
+    border-radius: 12px;
+    padding: 6px;
+    border: none;
+    width: 180px;
+    margin-left: 50px;
+}
