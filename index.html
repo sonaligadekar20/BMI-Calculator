@@ -82,8 +82,79 @@
         </div>
 
       </div>
-
-
+      <div class="col">
+        <div class="container-bmi">
+          <h2 class="heading1">Check Your BMI Now</h2>
+          <br>
+    
+          <p>Enter your height (cm) :
+            <input type="text" id="height">
+          </p>
+          <br>
+    
+          <p>Enter your weight (kg) :
+            <input type="text" id="weight">
+          </p>
+          <br><br>
+    
+          <button class="btn-calculate" type="button" onclick="calculateBMI()">Calculate BMI </button>
+    
+          <button class="btn-reset" type="button" onclick="resetBMI()">Reset BMI value </button> <br>
+    
+    
+          <p id="answer">Your BMI is </p>
+      
+          <p id="txt-remark">This means you are : ? </p>
+    
+          <script>
+            const inputBox1 = document.getElementById("height");
+            const inputBox2 = document.getElementById("weight");
+            const answertText = document.getElementById("answer");
+    
+            function calculateBMI() {
+              const height = parseFloat(inputBox1.value);
+              const weight = parseInt(inputBox2.value);
+              console.log(height);
+              console.log(weight);
+              // const bmi = (weight / ((height * height)));
+              const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    
+              // const Bmi = bmi.toFixed(2);
+              // console.log(Bmi);
+              answertText.innerText = `Your BMI is : ${bmi}`;
+    
+              const remarkText = document.getElementById("txt-remark");
+              // remarkText.innerText = `This means you are : ${innerText}`;
+              const message = "This means you are:"
+              
+              if (bmi < 18.5) {
+                document.getElementById("txt-remark").innerText = `${message} Underweighted`;
+              }
+              else if (bmi >= 18.5 && bmi <= 24.9) {
+                document.getElementById("txt-remark").innerText =  `${message} Normal`;
+              }
+              else if (bmi >= 25 && bmi <= 29.9) {
+                document.getElementById("txt-remark").innerText =  `${message} Overweight`;
+    
+              }
+              else if (bmi > 30 && bmi <= 34.9) {
+                document.getElementById("txt-remark").innerText = `${message} Obese`;
+              }
+              else if (bmi > 35 && bmi <= 39.9) {
+                document.getElementById("txt-remark").innerText =  `${message} Severely Obese`;
+              }
+              else if (bmi > 40) {
+                document.getElementById("txt-remark").innerText =  `${message} Morbidly Obese`;
+              }
+            }
+              function resetBMI() {
+                inputBox1.value = " ";
+                inputBox2.value = " ";
+                answertText.innerText = `Your BMI is :`;
+              }
+          </script>
+        </div>
+      </div>
     </div>
 </body>
 
